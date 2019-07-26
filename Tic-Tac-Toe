@@ -1,0 +1,54 @@
+board = [
+  ['','',''],
+  ['','',''],
+  ['','','']
+];
+
+let players = ['X','O'];
+
+let currentPlayer;
+
+function setup() {
+  createCanvas(400, 400);
+  let currentPlayer = random(players);
+  }
+
+function draw() { // a funtion that creates the board
+  background(220); // backgroundColor
+  let w = width/3;
+  let h = height/3;
+  
+  line (w,0,w,height);
+  line (w*2,0,w*2,height);
+  line (0,h,width,h);
+  line (0,h*2,width,h*2);
+  for(let i = 0; i < 3; i++){
+    for(let j = 0; j < 3; j++){
+      let x = w * i+w/2;
+      let y = h * j +h/2;
+      let spot = board[i][j];
+      text(spot,x,y)
+      textSize(32);
+    
+    }
+  }
+}
+function nextTurn(){
+	
+}
+
+function checkWinner{
+	let winner = null;
+	for (let i = 0; i < 3; i++){
+		if (board[i][0]==borad[i][1]==board[i][2]){
+			
+			winner = board[i][0];
+		}
+		
+	}
+	for (let i = 0; i < 3; i++){
+		if (board[0][i]=board[0][1]==board[1][2]){
+			winner = board[i][0];
+		}
+	}
+}
